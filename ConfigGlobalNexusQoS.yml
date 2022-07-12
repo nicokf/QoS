@@ -7,7 +7,7 @@
   
   tasks:
     - name: ConfigGlobalNexusQoS   
-      cisco.nxos.nxos_command:
+      cisco.nxos.nxos_config:
         src: "{{ playbook_dir }}/ConfigGlobalNexusQoS.txt"
 
       register: QoS

@@ -1,16 +1,16 @@
 ---
 - name: ConfigGlobalNexusQoS
-  hosts: N93180_ACCESO
+  hosts: AP-N93180-ACCESO-3
   gather_facts: no
   connection: ansible.netcommon.network_cli  
   
   
   tasks:
-    -name: ConfigGlobalNexusQoS   
-     cisco.nxos.nxos_command:
-       src: "{{ playbook_dir }}/ConfigGlobalNexusQoS.txt"
+    - name: ConfigGlobalNexusQoS   
+      cisco.nxos.nxos_command:
+        src: "{{ playbook_dir }}/ConfigGlobalNexusQoS.txt"
 
-     register: QoS
+      register: QoS
 
-    -name: ImprimirConfig
-     debug: var=QoS
+    - name: ImprimirConfig
+      debug: var=QoS

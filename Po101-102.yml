@@ -1,0 +1,16 @@
+---
+- name: Po101-102
+  hosts: N93180_ACCESO
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: Po101-102  
+      cisco.nxos.nxos_command:
+        src: "{{ playbook_dir }}/Po101-102.txt"
+
+      register: QoS
+
+    - name: ImprimirConfig
+      debug: var=QoS

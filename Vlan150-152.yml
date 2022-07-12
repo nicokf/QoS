@@ -1,0 +1,16 @@
+---
+- name: Vlan150-152
+  hosts: N93180_ACCESO
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: Vlan150-152  
+      cisco.nxos.nxos_command:
+        src: "{{ playbook_dir }}/Vlan150-152.txt"
+
+      register: QoS
+
+    - name: ImprimirConfig
+      debug: var=QoS

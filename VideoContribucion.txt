@@ -1,0 +1,8 @@
+policy-map type qos PM-VIDEO-CONTRIBUCION
+  class class-default
+    set dscp 36
+    set qos-group 3
+    set cos 4
+
+Vlan configuration 234
+service-policy type qos input PM-VIDEO-CONTRIBUCION

@@ -1,0 +1,31 @@
+Class-map type qos match-any REAL-TIME
+   match dscp 34,36,38,46
+   match cos 4,5
+   
+class-map type qos match-any SIGNALING-CONTROL
+   match dscp 26,48
+   match cos 3,6
+
+class-map type qos match-any DATA
+    match dscp 10,12,18
+	match cos 1,2
+
+policy-map type qos QoS_CORE_INPUT 
+  class  REAL-TIME
+    set qos-group 3
+  class  SIGNALING-CONTROL
+    set qos-group 2
+  class  DATA
+    set qos-group 1
+  class  class-default
+    set qos-group 0
+	
+policy-map type queuing QUEUING_CORE_OUTPUT 
+  class type queuing c-out-q3
+    priority level 1
+  class type queuing c-out-q2
+    bandwidth remaining percent 40
+  class type queuing c-out-q1
+    bandwidth remaining percent 30
+  class type queuing c-out-q-default
+    bandwidth remaining percent 30

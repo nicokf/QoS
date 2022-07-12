@@ -1,0 +1,10 @@
+interface port-channel30
+  service-policy type qos input QoS_CORE_INPUT
+  service-policy type queuing output QUEUING_CORE_OUTPUT
+
+
+interface port-channel10
+  service-policy type qos input QoS_CORE_INPUT
+  service-policy type queuing output QUEUING_CORE_OUTPUT
+
+

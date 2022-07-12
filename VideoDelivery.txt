@@ -1,0 +1,8 @@
+policy-map type qos PM-VIDEO-DELIVERY
+  class class-default
+    set dscp 38
+    set qos-group 3
+    set cos 4
+
+Vlan configuration 236
+service-policy type qos input PM-VIDEO-DELIVERY

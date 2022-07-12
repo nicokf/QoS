@@ -1,0 +1,8 @@
+interface port-channel101
+  service-policy type qos input QoS_CORE_INPUT
+  service-policy type queuing output QUEUING_CORE_OUTPUT
+
+
+interface port-channel102
+  service-policy type qos input QoS_CORE_INPUT
+  service-policy type queuing output QUEUING_CORE_OUTPUT

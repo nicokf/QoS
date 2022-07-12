@@ -1,0 +1,16 @@
+---
+- name: VideoDelivery
+  hosts: N93180_ACCESO
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: VideoDelivery  
+      cisco.nxos.nxos_command:
+        src: "{{ playbook_dir }}/VideoDelivery.txt"
+
+      register: QoS
+
+    - name: ImprimirConfig
+      debug: var=QoS

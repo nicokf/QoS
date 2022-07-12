@@ -7,10 +7,10 @@
   
   tasks:
     -name: ConfigGlobalNexusQoS   
-      cisco.nxos.nxos_command:
-        src: "{{ playbook_dir }}/ConfigGlobalNexusQoS.txt"
+     cisco.nxos.nxos_command:
+       src: "{{ playbook_dir }}/ConfigGlobalNexusQoS.txt"
 
-      register: QoS
+     register: QoS
 
-    - name: ImprimirConfig
-      debug: var=QoS
+    -name: ImprimirConfig
+     debug: var=QoS
